@@ -39,7 +39,7 @@ WA.onInit().then(() => {
 
 
     WA.room.area.onEnter('test-area').subscribe(() => {
-        currentPopup = WA.ui.openPopup("clockPopup", "Bienvenue dans la magie clinique", []);
+        currentPopup = WA.ui.openPopup("clockPopup", "Bienvenue ilyesDevBranch dans la magie clinique", []);
         console.log("Here welcome");
     })
 
