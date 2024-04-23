@@ -10,13 +10,23 @@ let currentPopup: any = undefined;
 WA.onInit().then(() => {
     console.log('Scripting API ready');
     console.log('Player tags: ',WA.player.tags)
+   WA.room.area.onEnter("Panel").subscribe(() => {
+        
+    console.log("hello le world !");
+      });
 
+    WA.room.onEnterLayer('chat').subscribe(() => {
+        WA.chat.open();
+        currentPopup = WA.ui.openPopup("chat", "bonjour le chat marche bien " , []);
+    });
     WA.room.area.onEnter('clock').subscribe(() => {
         const today = new Date();
         const time = today.getHours() + ":" + today.getMinutes();
         currentPopup = WA.ui.openPopup("clockPopup", "It's " + time, []);
     })
-
+    WA.room.onEnterLayer('chat').subscribe(() => {
+        WA.chat.open();
+    });
     WA.room.area.onLeave('clock').subscribe(closePopup)
 
     // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
@@ -34,7 +44,31 @@ WA.onInit().then(() => {
     })
 
     WA.room.area.onLeave('test-area').subscribe(closePopup);
+let noteWebsite: any;
+WA.room.onEnterLayer("visibleNote").subscribe(async () => {
+    console.log("Entering visibleNote layer");
 
+    noteWebsite = await WA.ui.website.open({
+        url: "./formulaire.html",
+        position: {
+            vertical: "top",
+            horizontal: "middle",
+        },
+        size: {
+            height: "30vh",
+            width: "50vw",
+        },
+        margin: {
+            top: "10vh",
+        },
+        allowApi: true,
+    });
+
+});
+
+WA.room.onLeaveLayer("visibleNote").subscribe(() => {
+    noteWebsite.close();
+});
 function closePopup(){
     if (currentPopup !== undefined) {
         currentPopup.close();
