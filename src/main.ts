@@ -12,7 +12,7 @@ WA.onInit().then(() => {
     console.log('Player tags: ',WA.player.tags)
    WA.room.area.onEnter("Panel").subscribe(() => {
         
-   console.log('hello le world!')
+  alert('hello le word!!!!!');
       });
     WA.room.area.onEnter('clock').subscribe(() => {
         const today = new Date();
