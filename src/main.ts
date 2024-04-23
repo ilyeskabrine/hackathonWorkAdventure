@@ -17,6 +17,8 @@ WA.onInit().then(() => {
 
     WA.room.onEnterLayer('chat').subscribe(() => {
         WA.chat.open();
+        console.log("chat");
+
     });
     WA.room.area.onEnter('clock').subscribe(() => {
         const today = new Date();
