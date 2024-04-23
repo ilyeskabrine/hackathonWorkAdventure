@@ -29,7 +29,7 @@
          "name":"start",
          "opacity":1,
          "type":"tilelayer",
-         "visible":false,
+         "visible":true,
          "width":31,
          "x":0,
          "y":0
@@ -61,7 +61,7 @@
          "name":"collisions",
          "opacity":1,
          "type":"tilelayer",
-         "visible":false,
+         "visible":true,
          "width":31,
          "x":0,
          "y":0
@@ -484,6 +484,17 @@
                  "width":131,
                  "x":227,
                  "y":387
+                }, 
+                {
+                 "height":49,
+                 "id":32,
+                 "name":"visibleNote",
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":120,
+                 "x":613,
+                 "y":273
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -565,8 +576,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":68,
- "nextobjectid":23,
+ "nextlayerid":71,
+ "nextobjectid":33,
  "orientation":"orthogonal",
  "properties":[
         {

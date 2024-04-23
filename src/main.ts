@@ -17,8 +17,7 @@ WA.onInit().then(() => {
 
     WA.room.onEnterLayer('chat').subscribe(() => {
         WA.chat.open();
-        console.log("chat");
-
+        currentPopup = WA.ui.openPopup("chat", "bonjour le chat marche bien " , []);
     });
     WA.room.area.onEnter('clock').subscribe(() => {
         const today = new Date();
@@ -45,7 +44,31 @@ WA.onInit().then(() => {
     })
 
     WA.room.area.onLeave('test-area').subscribe(closePopup);
+let noteWebsite: any;
+WA.room.onEnterLayer("visibleNote").subscribe(async () => {
+    console.log("Entering visibleNote layer");
 
+    noteWebsite = await WA.ui.website.open({
+        url: "./formulaire.html",
+        position: {
+            vertical: "top",
+            horizontal: "middle",
+        },
+        size: {
+            height: "30vh",
+            width: "50vw",
+        },
+        margin: {
+            top: "10vh",
+        },
+        allowApi: true,
+    });
+
+});
+
+WA.room.onLeaveLayer("visibleNote").subscribe(() => {
+    noteWebsite.close();
+});
 function closePopup(){
     if (currentPopup !== undefined) {
         currentPopup.close();
