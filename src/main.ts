@@ -14,6 +14,10 @@ WA.onInit().then(() => {
         
     console.log("hello le world !");
       });
+
+    WA.room.onEnterLayer('chat').subscribe(() => {
+        WA.chat.open();
+    });
     WA.room.area.onEnter('clock').subscribe(() => {
         const today = new Date();
         const time = today.getHours() + ":" + today.getMinutes();
