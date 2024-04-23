@@ -33,6 +33,8 @@ WA.onInit().then(() => {
         console.log("Here welcome");
     })
 
+    WA.room.area.onLeave('test-area').subscribe(closePopup);
+
 function closePopup(){
     if (currentPopup !== undefined) {
         currentPopup.close();
