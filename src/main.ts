@@ -27,7 +27,7 @@ WA.onInit().then(() => {
 }).catch(e => console.error(e));
 
 
-WA.event.on("test-area").subscribe(() => {
+WA.room.area.onEnter("test-area").subscribe(() => {
     alert("Bienvenue dans La Magie Clinique !");
     console.log('Im here!');
 });
