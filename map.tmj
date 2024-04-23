@@ -479,7 +479,7 @@
                  "id":22,
                  "name":"Chat",
                  "rotation":0,
-                 "type":"",
+                 "type":"area",
                  "visible":true,
                  "width":131,
                  "x":227,
