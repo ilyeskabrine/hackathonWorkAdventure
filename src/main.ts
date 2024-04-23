@@ -44,25 +44,28 @@ WA.onInit().then(() => {
     })
 
     WA.room.area.onLeave('test-area').subscribe(closePopup);
-let noteWebsite: any;
-WA.room.onEnterLayer("visibleNote").subscribe(async () => {
-    console.log("Entering visibleNote layer");
 
+let noteWebsite: any;
+
+WA.room.area.onEnter("visibleNote").subscribe(async () => {
+    console.log("Entering visibleNote layer");
+ 
     noteWebsite = await WA.ui.website.open({
-        url: "./formulaire.html",
+        url: "../forms/formulaire.html",
         position: {
             vertical: "top",
             horizontal: "middle",
         },
         size: {
-            height: "30vh",
-            width: "50vw",
+            height: "50%",
+            width: "20%",
         },
         margin: {
             top: "10vh",
         },
         allowApi: true,
     });
+    console.log('note 1');
 
 });
 
