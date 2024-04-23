@@ -26,6 +26,11 @@ WA.onInit().then(() => {
 
 }).catch(e => console.error(e));
 
+
+WA.event.on("test-area").subscribe((event) => {
+    alert("Bienvenue dans La Magie Clinique !")
+});
+
 function closePopup(){
     if (currentPopup !== undefined) {
         currentPopup.close();
