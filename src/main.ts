@@ -10,7 +10,10 @@ let currentPopup: any = undefined;
 WA.onInit().then(() => {
     console.log('Scripting API ready');
     console.log('Player tags: ',WA.player.tags)
-
+   WA.room.area.onEnter("Panel").subscribe(() => {
+        
+   console.log('hello le world!')
+      });
     WA.room.area.onEnter('clock').subscribe(() => {
         const today = new Date();
         const time = today.getHours() + ":" + today.getMinutes();
