@@ -31,6 +31,15 @@ WA.onInit().then(() => {
 
 }).catch(e => console.error(e));
 
+
+
+    WA.room.area.onEnter('test-area').subscribe(() => {
+        currentPopup = WA.ui.openPopup("clockPopup", "Bienvenue dans la magie clinique", []);
+        console.log("Here welcome");
+    })
+
+    WA.room.area.onLeave('test-area').subscribe(closePopup);
+
 function closePopup(){
     if (currentPopup !== undefined) {
         currentPopup.close();
