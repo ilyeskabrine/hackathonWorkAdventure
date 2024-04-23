@@ -27,10 +27,12 @@ WA.onInit().then(() => {
 }).catch(e => console.error(e));
 
 
-WA.room.area.onEnter("test-area").subscribe(() => {
-    alert("Bienvenue dans La Magie Clinique !");
-    console.log('Im here!');
-});
+
+    WA.room.area.onEnter('test-area').subscribe(() => {
+      
+        currentPopup = WA.ui.openPopup("Bienvenue dans la magie clinique");
+        console.log("Here welcome");
+    })
 
 function closePopup(){
     if (currentPopup !== undefined) {
