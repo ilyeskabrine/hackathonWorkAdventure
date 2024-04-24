@@ -2,6 +2,8 @@
 
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
+
+
 console.log('Script started successfully');
 
 let currentPopup: any = undefined;
@@ -42,4 +44,41 @@ function closePopup(){
     }
 }
 
+
+var Patient1 = {
+    id:'1',
+    nom: 'nom',
+    prenom: 'prenom',
+    age: 'age',
+    symptomes: 'symptome'
+};
+var Patient2 = {
+    id:'1',
+    nom: 'nom',
+    prenom: 'prenom',
+    age: 'age',
+    symptomes: 'symptome'
+};
+
+
+WA.state.saveVariable('patients', {
+    Patient1,
+    Patient2
+ 
+}).catch(e => console.error('Something went wrong while saving variable', e));
+
+//let pat=JSON.stringify(WA.state.patients);
+let patt=WA.state.patients;
+console.log(patt.Patient1);
+console.log("jhgf");
+
+// let pat=JSON.stringify(patt);
+// console.log(pat);
+
+ 
+
+WA.room.area.onEnter("visibleNote").subscribe(async () => {
+    console.log("Entering visibleNote layer");
+
+});
 export {};
