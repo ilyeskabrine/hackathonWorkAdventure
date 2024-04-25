@@ -36,26 +36,32 @@ WA.onInit().then(() => {
     });
 
      let patients = WA.state.patients;
-     let t = Object.keys(patients).length;
-
     submitButton.addEventListener("click", () => {
         // Créer un objet pour stocker les informations du patient
         console.log('submitted');
-        patients['patientData'+t] = {
-
-        t: 'patientData' + t,
-        firstName: firstName.value,
-        lastName: lastName.value,
-        doctor: doctorName.value,
-        message: message.value,
-        status: 'en attente',
-        id: WA.player.id 
+        let patientData = {
+            firstName: firstName.value,
+            lastName: lastName.value,
+            doctor: doctorName.value,
+            message: message.value,
+            status: 'en attente',
+            id: WA.player.id
         };
-   
-    
-        WA.state.saveVariable('patients', {patients}).catch(e => console.error('Something went wrong while saving variable', e));
 
-        
+        // Vérifier s'il y a déjà des patients enregistrés
+        let patients = WA.state.patients ? {...WA.state.patients} : {};
+
+        // Ajouter les données du nouveau patient à l'objet patients
+        patients['patientData' + Object.keys(patients).length] = patientData;
+
+        // Enregistrer l'objet patients mis à jour
+        WA.state.saveVariable('patients', patients)
+            .then(() => {
+                console.log("Patient data saved successfully:", patients);
+            })
+            .catch(e => console.error('Something went wrong while saving variable', e));
+
+        // Cacher le formulaire et restaurer les contrôles du joueur
         formContainer.style.display = "none";
         WA.controls.restorePlayerControls();
     });
