@@ -18,14 +18,28 @@ WA.onInit().then(() => {
     WA.state.saveVariable('patients', {
     
     }).catch(e => console.error('Something went wrong while saving variable', e));
+    
+    function verifierID(id) {
+        // Votre liste d'objets
+        var patientsList = WA.state.patients;
+        console.log(patientsList);
+        // Parcourir chaque objet dans la liste
+        for (var key in patientsList) {
+            if (patientsList.hasOwnProperty(key)) {
+                // Vérifier si l'ID correspond
+                if (patientsList[key].id === id) {
+                    return false; // L'ID existe dans la liste
+                }
+            }
+        }
+        return true; // L'ID n'existe pas dans la liste
+    }
+    
 
-    console.log('Scripting API ready');
-    console.log('Player tags: ',WA.player.tags)
-
-    console.log('Player ID: ', WA.player.id);
-    let noteWebsite: any;
     WA.room.area.onEnter('getinfo').subscribe(async () => {
+         if(verifierID(WA.player.id)==true){
         noteWebsite = await WA.ui.website.open({
+           
             url: "./formulaire.html",
             position: {
                 vertical: "top",
@@ -41,26 +55,15 @@ WA.onInit().then(() => {
             allowApi: true,
         });
         WA.controls.disablePlayerControls();
+      }else{
+        console.log('vous avez un ticket en attente');
+      }
     });
 
     //let pat=JSON.stringify(WA.state.patients);
-    let patt=WA.state.patients;
-    console.log("*************");
-    console.log(patt);
-    console.log("*************");
-
-
-
     
 
 }).catch(e => console.error(e));
-
-
-
-
-
-
-
 
 
 

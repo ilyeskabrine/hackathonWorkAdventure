@@ -8,7 +8,8 @@ const lastName = document.getElementById("prenom") as HTMLTextAreaElement;
 const doctorName = document.getElementById("medecin") as HTMLTextAreaElement;
 const message = document.getElementById("message") as HTMLTextAreaElement;
 
-const submitButton = document.getElementById("submitButton") as HTMLButtonElement;
+const submitButton = document.getElementById("submitButton") as HTMLButtonElement
+const closeButton = document.getElementById("ButtonClose") as HTMLButtonElement;
 
 
 
@@ -34,11 +35,12 @@ WA.onInit().then(() => {
         });
         WA.controls.disablePlayerControls();
     });
-
+    closeButton.addEventListener("click", () => {
+        formContainer.style.display = "none";
+        WA.controls.restorePlayerControls();
+    })
      let patients = WA.state.patients;
     submitButton.addEventListener("click", () => {
-        // Créer un objet pour stocker les informations du patient
-        console.log('submitted');
         let patientData = {
             firstName: firstName.value,
             lastName: lastName.value,
@@ -62,33 +64,21 @@ WA.onInit().then(() => {
             .catch(e => console.error('Something went wrong while saving variable', e));
 
         // Cacher le formulaire et restaurer les contrôles du joueur
-        formContainer.style.display = "none";
+        
+        
         WA.controls.restorePlayerControls();
     });
 
+
     
-        console.log(patients);
+
 
 
     WA.state.onVariableChange('patients').subscribe(() => {
 
         let patients=WA.state.loadVariable('patients');
         console.log(patients+'on change');
-
-
-        // Parcourir les propriétés de patients
-        // for (var key in patients) {
-        //     if (patients.hasOwnProperty(key) ) {
-        //         var patientsData = patients[key];
-                
-        //         // Parcourir les propriétés de patientsData
-        //         for (var patientKey in patientsData) {
-        //             if (patientsData.hasOwnProperty(patientKey)) {  
-        //                 console.log(patientKey + ": ", patientsData[patientKey]);
-        //             }
-        //         }
-        //     }
-        // }
+       
     })
 
 }).catch(e => console.error(e));
