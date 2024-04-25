@@ -41,8 +41,8 @@ WA.onInit().then(() => {
     submitButton.addEventListener("click", () => {
         // Créer un objet pour stocker les informations du patient
         console.log('submitted');
+        patients['patientData'+t] = {
 
-        let patient = {
         t: 'patientData' + t,
         firstName: firstName.value,
         lastName: lastName.value,
@@ -53,17 +53,14 @@ WA.onInit().then(() => {
         };
    
     
-        WA.state.saveVariable('patients',
-        {patient},
-        
-        ).catch(e => console.error('Something went wrong while saving variable', e));
+        WA.state.saveVariable('patients', {patients}).catch(e => console.error('Something went wrong while saving variable', e));
 
         
         formContainer.style.display = "none";
         WA.controls.restorePlayerControls();
     });
 
-    patients = WA.state.patients;
+    
         console.log(patients);
 
 
