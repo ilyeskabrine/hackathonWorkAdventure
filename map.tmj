@@ -309,12 +309,6 @@
                  "id":90,
                  "name":"entry_zone1",
                  "opacity":1,
-                 "properties":[
-                        {
-                         "name":"numberOfUsers",
-                         "type":"int",
-                         "value":0
-                        }],
                  "type":"tilelayer",
                  "visible":true,
                  "width":30,
@@ -379,12 +373,6 @@
                  "id":91,
                  "name":"entry_zone2",
                  "opacity":1,
-                 "properties":[
-                        {
-                         "name":"numberOfUsers",
-                         "type":"int",
-                         "value":0
-                        }],
                  "type":"tilelayer",
                  "visible":true,
                  "width":30,
@@ -449,12 +437,6 @@
                  "id":92,
                  "name":"entry_zone3",
                  "opacity":1,
-                 "properties":[
-                        {
-                         "name":"numberOfUsers",
-                         "type":"int",
-                         "value":0
-                        }],
                  "type":"tilelayer",
                  "visible":true,
                  "width":30,
@@ -519,12 +501,6 @@
                  "id":93,
                  "name":"entry_zone4",
                  "opacity":1,
-                 "properties":[
-                        {
-                         "name":"numberOfUsers",
-                         "type":"int",
-                         "value":0
-                        }],
                  "type":"tilelayer",
                  "visible":true,
                  "width":30,
@@ -589,12 +565,6 @@
                  "id":94,
                  "name":"entry_zone5",
                  "opacity":1,
-                 "properties":[
-                        {
-                         "name":"numberOfUsers",
-                         "type":"int",
-                         "value":0
-                        }],
                  "type":"tilelayer",
                  "visible":true,
                  "width":30,
@@ -659,12 +629,6 @@
                  "id":95,
                  "name":"entry_zone6",
                  "opacity":1,
-                 "properties":[
-                        {
-                         "name":"numberOfUsers",
-                         "type":"int",
-                         "value":0
-                        }],
                  "type":"tilelayer",
                  "visible":true,
                  "width":30,
@@ -1115,7 +1079,7 @@
                  "name":"zone1",
                  "point":true,
                  "rotation":0,
-                 "type":"",
+                 "type":"variable",
                  "visible":true,
                  "width":0,
                  "x":432.380340507549,
@@ -1124,10 +1088,10 @@
                 {
                  "height":0,
                  "id":45,
-                 "name":"zone 2",
+                 "name":"zone2",
                  "point":true,
                  "rotation":0,
-                 "type":"",
+                 "type":"variable",
                  "visible":true,
                  "width":0,
                  "x":682.942499196916,
@@ -1139,7 +1103,7 @@
                  "name":"zone3",
                  "point":true,
                  "rotation":0,
-                 "type":"",
+                 "type":"variable",
                  "visible":true,
                  "width":0,
                  "x":876.325088339223,
@@ -1151,7 +1115,7 @@
                  "name":"zone4",
                  "point":true,
                  "rotation":0,
-                 "type":"",
+                 "type":"variable",
                  "visible":true,
                  "width":0,
                  "x":727.91519434629,
@@ -1163,7 +1127,7 @@
                  "name":"zone5",
                  "point":true,
                  "rotation":0,
-                 "type":"",
+                 "type":"variable",
                  "visible":true,
                  "width":0,
                  "x":467.716029553485,
@@ -1175,7 +1139,7 @@
                  "name":"zone6",
                  "point":true,
                  "rotation":0,
-                 "type":"",
+                 "type":"variable",
                  "visible":true,
                  "width":0,
                  "x":189.527786700932,
