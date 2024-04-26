@@ -79,15 +79,6 @@ WA.state.saveVariable('patients', {
  
 }).catch(e => console.error('Something went wrong while saving variable', e));
 
-//let pat=JSON.stringify(WA.state.patients);
-let patt=WA.state.patients;
-console.log(patt.Patient1);
-console.log("jhgf");
-
-// let pat=JSON.stringify(patt);
-// console.log(pat);
-
- 
 
 WA.room.area.onEnter("visibleNote").subscribe(async () => {
     console.log("Entering visibleNote layer");
