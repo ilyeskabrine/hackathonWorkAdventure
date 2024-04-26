@@ -1,14 +1,10 @@
 /// <reference types="@workadventure/iframe-api-typings" />
 
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
+import { initAllDoors, onEntryDoorsPoint, listenDoorsVariables } from "./doors";
 
 
-
-console.log('Script started successfully');
-
-// Waiting for the API to be ready
 WA.onInit().then(() => {
-    console.log('Scripting API ready');
     console.log('Player tags: ',WA.player.tags)
 
     console.log('Player ID: ', WA.player.id);
@@ -34,14 +30,13 @@ WA.onInit().then(() => {
         noteWebsite.close();
     });
 
-    console.log(WA.players.list());
-
-
-
-
     bootstrapExtra().then(() => {
         console.log('Scripting API Extra ready');
     }).catch(e => console.error(e));
+
+    initAllDoors()
+    onEntryDoorsPoint()
+    listenDoorsVariables()
 
 }).catch(e => console.error(e));
 
