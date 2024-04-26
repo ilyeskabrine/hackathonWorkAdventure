@@ -1305,15 +1305,15 @@
          "name":"floorLayer",
          "objects":[
                 {
-                 "height":107,
+                 "height":60,
                  "id":25,
                  "name":"getinfo",
                  "rotation":0,
                  "type":"area",
                  "visible":true,
-                 "width":66,
+                 "width":92,
                  "x":33,
-                 "y":200
+                 "y":258
                 }, 
                 {
                  "height":139,
@@ -1543,6 +1543,34 @@
                  "width":0,
                  "x":53,
                  "y":257
+                }, 
+                {
+                 "height":0,
+                 "id":50,
+                 "name":"patients",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"persist",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"readableBy",
+                         "type":"string",
+                         "value":"admin"
+                        }, 
+                        {
+                         "name":"writableBy",
+                         "type":"string",
+                         "value":"admin"
+                        }],
+                 "rotation":0,
+                 "type":"variable",
+                 "visible":true,
+                 "width":0,
+                 "x":156,
+                 "y":247
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1583,7 +1611,7 @@
          "y":0
         }],
  "nextlayerid":111,
- "nextobjectid":50,
+ "nextobjectid":51,
  "orientation":"orthogonal",
  "properties":[
         {
