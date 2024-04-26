@@ -1,6 +1,7 @@
 /// <reference types="@workadventure/iframe-api-typings" />
 
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
+import { initAllDoors, onEntryDoorsPoint, listenDoorsVariables } from "./doors";
 
 console.log('Script started successfully');
 
@@ -10,23 +11,25 @@ let currentPopup: any = undefined;
 WA.onInit().then(() => {
     console.log('Scripting API ready');
     console.log('Player tags: ',WA.player.tags)
+
    WA.room.area.onEnter("Panel").subscribe(() => {
-        
-    console.log("hello le world !");
-      });
+    });
 
     WA.room.onEnterLayer('chat').subscribe(() => {
         WA.chat.open();
         currentPopup = WA.ui.openPopup("chat", "bonjour le chat marche bien " , []);
     });
+
     WA.room.area.onEnter('clock').subscribe(() => {
         const today = new Date();
         const time = today.getHours() + ":" + today.getMinutes();
         currentPopup = WA.ui.openPopup("clockPopup", "It's " + time, []);
     })
+
     WA.room.onEnterLayer('chat').subscribe(() => {
         WA.chat.open();
     });
+
     WA.room.area.onLeave('clock').subscribe(closePopup)
 
     // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
@@ -34,6 +37,9 @@ WA.onInit().then(() => {
         console.log('Scripting API Extra ready');
     }).catch(e => console.error(e));
 
+    initAllDoors()
+    onEntryDoorsPoint()
+    listenDoorsVariables()
 }).catch(e => console.error(e));
 
 
