@@ -91,7 +91,7 @@
     </div>
 
     <h2>Formulaire de Consultation</h2>
-    <form action="#" method="post" >
+    <form >
         <div class="form-group">
             <label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom" required>
@@ -114,6 +114,7 @@
             <label for="message">Message :</label>
             <textarea id="message" name="message" required></textarea>
         </div>
+        <input type="time" id="appointment"  min="09:00" max="18:00" required />
         <button type="submit" class="btn" id="submitButton">Envoyer</button>
     </form>
 </div>

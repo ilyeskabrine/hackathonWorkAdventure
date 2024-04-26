@@ -29,10 +29,10 @@ WA.onInit().then(() => {
             },
             allowApi: true,
         });
-        WA.controls.disablePlayerControls();
     });
-
-
+    WA.room.area.onLeave("getinfo").subscribe(() => {
+        noteWebsite.close();
+    });
 
 
 
