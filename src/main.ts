@@ -4,6 +4,7 @@ import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 import { initAllDoors, onEntryDoorsPoint, listenDoorsVariables } from "./doors";
 
 
+
 WA.onInit().then(() => {
     console.log('Player tags: ',WA.player.tags)
 
@@ -11,7 +12,7 @@ WA.onInit().then(() => {
     let noteWebsite: any;
     WA.room.area.onEnter('getinfo').subscribe(async () => {
         noteWebsite = await WA.ui.website.open({
-            url: "./formulaire.html",
+            url: "./EntryForm.html",
             position: {
                 vertical: "top",
                 horizontal: "middle",
@@ -29,6 +30,8 @@ WA.onInit().then(() => {
     WA.room.area.onLeave("getinfo").subscribe(() => {
         noteWebsite.close();
     });
+
+   
 
     bootstrapExtra().then(() => {
         console.log('Scripting API Extra ready');

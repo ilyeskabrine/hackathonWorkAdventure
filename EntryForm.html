@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Consultation</title>
+    <style>
+
+        .container {
+            width: 50%;
+            height: 20%;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-y: hidden;
+        }
+
+        .container h2 {
+            text-align: center;
+            font-family: Arial;
+            color: #8a8a8c;
+        }
+
+        .container-img {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+        }
+
+        .container-img img {
+            width: 150px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        input[type="time"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            height: 50%;
+        }
+
+        .form-group select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-down-b-512.png') no-repeat right center / 15px 15px;
+        }
+
+        .form-group select:focus {
+            outline: none;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body id="formContainer">
+
+<div class="container">
+    <div class="container-img">
+        <img src="/images/logo.png">
+    </div>
+
+    <h2>Choisir votre role</h2>
+    <form>
+        
+        <span  class="btn" id="patientButton">Patient</span>
+        <span  class="btn" id="doctorButton">Medecin</span>
+    </form>
+</div>
+
+</body>
+<script src="https://play.workadventu.re/iframe_api.js"></script>
+<script type="module" src="src/formulaire.ts"></script>
+</html>
