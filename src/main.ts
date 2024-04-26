@@ -11,10 +11,7 @@ const generateRandomNumber = () => {
 }
 
 const initState = () => {
-    // const roomName = window.location.pathname;
-    // console.log("🚀 ~ initState ~ roomName:", roomName)
     const waitingRoom = WA.state.loadVariable("waiting-room")
-    console.log("🚀 ~ initState ~ waitingRoom:", waitingRoom)
     if (!waitingRoom) {
         WA.state.saveVariable("waiting-room", {
             actualRoom: "hopital-1"

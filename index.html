@@ -9,6 +9,12 @@
     <meta name="title" content="WorkAdventure Starter Kit">
     <title>WorkAdventure test map</title>
     <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/src/styles/reset.css">
+    <link rel="stylesheet" href="/src/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <script>
         window.onload = function () {
             const host = window.location.host;
@@ -18,185 +24,125 @@
             }
             const instanceId = "hopital-1";
             const url = `https://play.workadventu.re/_/${instanceId}/${host}${path}map.tmj`;
-            document.getElementById('testMapURL').href = url;
-            document.getElementById('testMapBtnURL').href = url;
-            document.getElementById('testMapURL').innerText = url;
-
-            const tmjURL = window.location.protocol + '//' + window.location.host + path + 'map.tmj';
-            document.getElementById('tmjURL').innerText = tmjURL;
-
-            const gettingStartedLink = 'https://workadventu.re/getting-started?name=Map&mapUrl=' + tmjURL;
-            document.getElementById('gettingStartedLink').href = gettingStartedLink;
+            document.getElementById('Start1').href = url;
+            document.getElementById('Start2').href = url;
+            document.getElementById('Start3').href = url;
+            document.getElementById('Start4').href = url;
 
         };
     </script>
-    <style>
-        html, body {
-        height: 100%;
-        }
-        body {
-        display: flex;
-        flex-direction: column;
-        }
-        .content {
-        flex: 1 0 auto;
-        }
-        footer {
-        flex-shrink: 0;
-        }
-
-        body {
-            font-family: Roboto Condensed,Arial;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        header {
-            margin: 30px;
-        }
-
-        header .logo {
-            display: block;
-            position: relative;
-        }
-
-        header .logo img {
-            display: block;
-            width: 500px;
-            margin: auto;
-            text-align: center;
-        }
-
-        h1,
-        h2 {
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-
-        section {
-            margin-top: 3rem;
-        }
-
-        .tips {
-            font-size: 0.8rem;
-            font-style: italic;
-        }
-
-        .socials img {
-            width: 30px;
-            height: 30px;
-        }
-
-        .socials > a {
-            display: inline-block;
-            margin: 20px 5px;
-        }
-
-        a.button {
-            display: inline-block;
-            padding: 13px 20px 12px;
-            background-color: rgba(65, 86, 246, 0.9);
-            color: white;
-            border-radius: 8px;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-decoration: none;
-            text-align: center;
-            width: auto;
-            position: relative;
-            font-size: 1.3em;
-        }
-
-        a.button:hover {
-            background-color: rgb(65, 86, 246);
-            cursor: pointer;
-        }
-
-        .map {
-            width: 30%;
-            margin-bottom: 3%;
-            min-width: 200px;
-        }
-
-        .url-box {
-            border: 1px solid rgb(65, 86, 246);
-            border-radius: 3px;
-            padding: 3px;
-            background-color: rgba(65, 86, 246, 0.1);
-        }
-        .url {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 14px;
-        }
-
-        footer {
-            display: block;
-            padding: 2rem 5vw;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="content">
-        <header>
-            <div class="logo">
-                <a href="https://workadventu.re/" target="_blank" title="Workadventure">
-                    <img src="/images/logo.svg" alt="WorkAdventure logo" />
-                </a>
+    <header>
+        <nav>
+            <a href="/">
+                <img src="/images/Logo.png" />
+            </a>
+
+            <ul>
+                <li><a href="#about">A propos</a></li>
+                <li><a href="#services">Nos services</a></li>
+                <li><a class="btn-primary" href="#" id="Start4">Get started <img src="/images/arrow.svg" /></a></li>
+                <li><img src="/images/french.svg" /></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="landing">
+            <div>
+                <h1>Bonjour !</h1>
+                <h2>Découvrez notre plateforme de <br /> consultation en visioconférence.</h2>
+                <a class="btn-primary w-300" id="Start1" href="#">Get started <img src="/images/arrow.svg" /></a>
             </div>
-        </header>
-        <main>
-            <section>
-                <h2>Test my map</h2>
-                <p><a id="testMapURL" href="#" class="url"></a></p>
-                <p class="tips">(In order to test another map, locate "map.tmj" at the end of the URL and replace it by another file name)</p>
-                <img src="/map.png" alt="Map thumbnail" class="map">
-                <p><a id="testMapBtnURL" href="#" class="button">Test my map</a></p>
-            </section>
 
-            <section>
-                <h2>Publish my map</h2>
-                <p>Register your room on WorkAdventure!</p>
-                <p>Copy and paste the map URL in WorkAdventure's administration panel:</p>
-                <p><span id="tmjURL" class="url-box url"></span></p>
-            </section>
+            <div>
+                <span>
+                    Sortez des sentiers battus, et découvrez votre salle de soins comme jamais au par avant. Grâce à
+                    notre carte interactive, connectez-vous avec des professionnels qualifiés, où que vous soyez.
+                    <br />
+                    Des conseils médicaux au coaching professionnel, trouvez l'expert adapté à vos besoins en un clic.
+                </span>
 
-            <section>
-                <h2>Connect and get help</h2>
-                <div>
-                    <div class="socials">
-                        <a href="https://discord.gg/G6Xh9ZM9aR" target="_blank" title="discord">
-                            <img src="/images/discord.png" alt="discord">
-                        </a>
-                        <a href="https://github.com/thecodingmachine/workadventure" target="_blank" title="github">
-                            <img src="/images/github.png" alt="github">
-                        </a>
-                        <a href="https://www.youtube.com/channel/UCXJ9igV-kb9gw1ftR33y5tA" target="_blank" title="youtube">
-                            <img src="/images/youtube.png" alt="youtube">
-                        </a>
-                        <a href="https://twitter.com/Workadventure_" target="_blank" title="twitter">
-                            <img src="/images/twitter.png" alt="twitter">
-                        </a>
-                        <a href="https://www.instagram.com/workadventure_" target="_blank" title="instagram">
-                            <img src="/images/instagram.png" alt="instagram">
-                        </a>
-                        <a href="https://www.linkedin.com/company/workadventu-re" target="_blank" title="linkedin">
-                            <img src="/images/linkedin.png" alt="linkedin">
-                        </a>
-                    </div>
+                <span class="bold">Bienvenue dans l'ère de la consultation en ligne sans frontières !</span>
+            </div>
+        </section>
 
-                    <div>
-                        <a href="https://www.youtube.com/watch?v=lu1IZgBJJD4&list=PL7jmrMKZfjCnz36FvezxJ-Tshuh3Zz-nc&ab_channel=WorkAdventure"
-                        target="_blank">Watch tutorials</a>
-                        <a href="https://discord.gg/G6Xh9ZM9aR" target="_blank">Talk to the community</a>
-                    </div>
+        <section id="about" class="about">
+            <div>
+                <h3>Qui sommes nous ?</h3>
+                <div class="flex-col gap-2 max-350">
+                    <span>Notre plateforme est née de la conviction que l'accès aux services professionnels devrait
+                        simple. Nous avons réuni la technologie, l’innovation et l’utilisateur au coeur du besoin, pour
+                        créer une expérience de consultation en visioconférence sans précédent.</span>
+                    <span>Nous croyons fermement en l'idée que la distance ne devrait pas être un obstacle à la qualité
+                        des interactions professionnelles. C'est pourquoi nous avons développé une carte interactive
+                        novatrice qui vous permet de trouver et de vous connecter avec les professionnelsa n’importe
+                        quel moment et peu importe où vous vous trouvez dans le monde.</span>
                 </div>
-            </section>
-        </main>
-    </div>
+            </div>
+
+            <div>
+                <h3>Nos valeurs</h3>
+                <ul>
+                    <li><img src="/images/security.svg" /> Confidentialité et sécurité</li>
+                    <li><img src="/images/innovation.svg" /> Innovation</li>
+                    <li><img src="/images/service.svg" /> Qualité du service</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <h3>Nos services</h3>
+
+            <ul>
+                <li>
+                    <div>
+                        <h4>Consultation virtuelle</h4>
+                        <span>Aujourd'hui l'accès aux professionnels de santé qualifiés peut paraitre un vrai calvaire.</span>
+                        <span>Nous vous proposons d'en finir avec ça !</span>
+                    </div>
+                    <a class="btn-primary w-300" href="#" id="Start2">Get started <img src="/images/arrow.svg" /></a>
+                </li>
+
+                <li>
+                    <div>
+                        <h4>La taxe lapin</h4>
+                        <span>En moyenne, un médecin perd deux heures par semaine à cause des patients qui ne viennent pas aux rendez-vous.</span>
+                        <span>Nous avons décidé d'être les premiers à mettre en place la taxe "lapin" dans les consultations à distance, afin que nos médecins ne perdent plus de temps.</span>
+                    </div>
+                </li>
+
+                <li>
+                    <div>
+                        <h4>Besoin d'un <br/> deuxième avis</h4>
+                        <span>Nos médecins seront ravis de vous aider et tout mettre en place pour vous rassurer.</span>
+                    </div>
+                </li>
+
+                <li>
+                    <div>
+                        <h4>L'innovation au coeur de nos services</h4>
+                        <span>Notre concept reste en constante évolution, nous sommes toujours ravis de récupérer vos besoins et vos questions.</span>
+                    </div>
+                    <a class="btn-primary w-300" href="#">Besoin d'aide ? <img src="/images/arrow.svg" /></a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
     <footer>
-        <a href="https://workadventu.re/" target="_blank" title="workadventu.re">&copy; WorkAdventure</a>
+           <img src="/images/Logo_White.png" />
+           
+           <nav>
+            <ul>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#about">A propos</a></li>
+                <li><a href="#services">Nos services</a></li>
+                <li><a class="btn-primary-white" href="#" id="Start3">Get started <img src="/images/arrow_white.svg" /></a></li>
+            </ul>
+           </nav>
     </footer>
 </body>
 
