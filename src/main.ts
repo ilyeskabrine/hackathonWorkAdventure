@@ -12,7 +12,7 @@ WA.onInit().then(() => {
     let noteWebsite: any;
     WA.room.area.onEnter('getinfo').subscribe(async () => {
         noteWebsite = await WA.ui.website.open({
-            url: "./EntryForm.html",
+            url: "./formulaire.html",
             position: {
                 vertical: "top",
                 horizontal: "middle",
@@ -31,8 +31,6 @@ WA.onInit().then(() => {
         noteWebsite.close();
     });
 
-   
-
     bootstrapExtra().then(() => {
         console.log('Scripting API Extra ready');
     }).catch(e => console.error(e));
@@ -43,39 +41,6 @@ WA.onInit().then(() => {
 
 }).catch(e => console.error(e));
 
-
-
-
-
-
-
-
-
-
-
-
-
-var Patient1 = {
-    id:'1',
-    nom: 'nom',
-    prenom: 'prenom',
-    age: 'age',
-    symptomes: 'symptome'
-};
-var Patient2 = {
-    id:'1',
-    nom: 'nom',
-    prenom: 'prenom',
-    age: 'age',
-    symptomes: 'symptome'
-};
-
-
-WA.state.saveVariable('patients', {
-    Patient1,
-    Patient2
- 
-}).catch(e => console.error('Something went wrong while saving variable', e));
 
 
 WA.room.area.onEnter("visibleNote").subscribe(async () => {

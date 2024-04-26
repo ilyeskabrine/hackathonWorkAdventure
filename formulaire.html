@@ -77,6 +77,7 @@
             border-radius: 5px;
             font-size: 16px;
             text-decoration: none;
+            margin: 10px;
         }
 
         .btn:hover {
@@ -90,9 +91,15 @@
     <div class="container-img">
         <img src="/images/logo.png">
     </div>
+   
+ 
+        
+    <span  class="btn" id="patientButton">Patient</span>
+    <span  class="btn" id="doctorButton">Medecin</span>
 
-    <h2>Formulaire de Consultation</h2>
-    <form >
+    
+
+    <form id="patientForm" style="display: none;">
         <div class="form-group">
             <label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom" required>
@@ -105,9 +112,11 @@
             <label for="medecin">Sélectionnez un médecin :</label>
             <select id="medecin" name="medecin" required>
                 <option value="">-- Sélectionnez --</option>
-                <option value="Dr. Dupont">Dr. Dupont</option>
-                <option value="Dr. Martin">Dr. Martin</option>
-                <option value="Dr. Dubois">Dr. Dubois</option>
+                <option value="Dr.Leroy">Dr.Leroy</option>
+                <option value="Dr.Garcia">Dr.Garcia</option>
+                <option value="Dr.Roux">Dr.Roux</option>
+                <option value="Dr.Fournier">Dr.Fournier</option>
+                <option value="Dr.Lefebvre">Dr.Lefebvre</option>
                 <!-- Ajoutez d'autres médecins au besoin -->
             </select>
         </div>
@@ -120,6 +129,28 @@
         <p></p>
         <button type="submit" class="btn" id="submitButton">Envoyer</button>
     </form>
+
+   
+    <form id="doctorForm" style="display: none;">
+       
+        <div class="form-group">
+            <label for="salle"> Vous étes le medecin ? </label>
+            <select id="salle" name="salle" required>
+                <option value="">-- Sélectionnez --</option>
+                <option value="Dr.Leroy">Dr.Leroy</option>
+                <option value="Dr.Garcia">Dr.Garcia</option>
+                <option value="Dr.Roux">Dr.Roux</option>
+                <option value="Dr.Fournier">Dr.Fournier</option>
+                <option value="Dr.Lefebvre">Dr.Lefebvre</option>
+                <!-- Ajoutez d'autres médecins au besoin -->
+            </select>
+        </div>
+       
+        
+        <button type="submit" class="btn" id="doctorSubmitButton">Envoyer</button>
+    </form>
+
+
 </div>
 
 </body>
