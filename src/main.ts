@@ -4,6 +4,7 @@ import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 import { initAllDoors, onEntryDoorsPoint, listenDoorsVariables } from "./doors";
 
 
+
 WA.onInit().then(() => {
     console.log('Player tags: ',WA.player.tags)
 
@@ -40,39 +41,6 @@ WA.onInit().then(() => {
 
 }).catch(e => console.error(e));
 
-
-
-
-
-
-
-
-
-
-
-
-
-var Patient1 = {
-    id:'1',
-    nom: 'nom',
-    prenom: 'prenom',
-    age: 'age',
-    symptomes: 'symptome'
-};
-var Patient2 = {
-    id:'1',
-    nom: 'nom',
-    prenom: 'prenom',
-    age: 'age',
-    symptomes: 'symptome'
-};
-
-
-WA.state.saveVariable('patients', {
-    Patient1,
-    Patient2
- 
-}).catch(e => console.error('Something went wrong while saving variable', e));
 
 
 WA.room.area.onEnter("visibleNote").subscribe(async () => {
