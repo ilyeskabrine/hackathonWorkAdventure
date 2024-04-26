@@ -41,6 +41,7 @@
         }
 
         .form-group input[type="text"],
+        input[type="time"],
         .form-group select,
         .form-group textarea {
             width: 100%;
@@ -111,10 +112,12 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="message">Message :</label>
+            <label for="message">Symptômes :</label>
             <textarea id="message" name="message" required></textarea>
         </div>
+        <label for="appointment">Rendez vous :</label>
         <input type="time" id="appointment"  min="09:00" max="18:00" required />
+        <p></p>
         <button type="submit" class="btn" id="submitButton">Envoyer</button>
     </form>
 </div>

@@ -19,13 +19,8 @@ WA.onInit().then(() => {
         WA.player.state.doctorName = doctorName.value;
         WA.player.state.message = message.value;
         WA.player.state.appointment = appointment.value;
-        console.log('First Name:',   WA.player.state.firstName);
-        console.log('Last Name:', WA.player.state.lastName);
-        console.log('Doctor Name:', WA.player.state.doctorName);
-        console.log('Message:', WA.player.state.message);
-        console.log('Appointment:', WA.player.state.appointment);
-    });
 
+    });
 }).catch(e => console.error(e));
 
 bootstrapExtra().then(() => {

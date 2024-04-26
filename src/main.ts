@@ -21,11 +21,11 @@ WA.onInit().then(() => {
                 horizontal: "middle",
             },
             size: {
-                height: "100vh",
+                height: "120vh",
                 width: "50vw",
             },
             margin: {
-                top: "10vh",
+                top: "3vh",
             },
             allowApi: true,
         });
@@ -33,6 +33,8 @@ WA.onInit().then(() => {
     WA.room.area.onLeave("getinfo").subscribe(() => {
         noteWebsite.close();
     });
+
+    console.log(WA.players.list());
 
 
 
