@@ -19,6 +19,15 @@ Lancer les commandes dans l'ordre
 3. Création d'un formulaire de consultation des patients pour enregistrer les données des patients.
 4. Réorienter les patients vers la salle du médecin sélectionné.
 
+### Ilyes KABRINE :
+ilyeskabrine0@gmail.comµ
+
+### Fonctionnalités Ilyes KABRINE
+1. Création et déploiement de projet
+2. Création des variables json pour stocker les données 
+3. Création du formulaire des médecins.
+4. Réorienter les médecins vers la salle sélectionné. 
+
 ### Fonctionnalités ASSOO EMANE Ulysse
 1. Intégration du site vitrine (desktop/mobile) selon les maquettes fournies
 2. Ajout dynamique de médécin dans le formulaire de consulation côté patient et médécin.
