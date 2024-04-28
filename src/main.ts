@@ -1,24 +1,15 @@
 /// <reference types="@workadventure/iframe-api-typings" />
 
-import { Popup } from "@workadventure/iframe-api-typings";
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 import { initState, onEntryEntryJistsiRooms, onEntryNavigationStairs, onEntryRegister } from "./navigation";
 import { initAllDoors, onEntryDoorsPoint, listenDoorsVariables } from "./doors";
 
 
 
-let currentPopup: Popup | undefined;
-
 // Waiting for the API to be ready
 WA.onInit().then(async () => {
     initState()
-    WA.room.area.onEnter('clock').subscribe(() => {
-        const today = new Date();
-        const time = today.getHours() + ":" + today.getMinutes();
-        currentPopup = WA.ui.openPopup("clockPopup", "It's " + time, []);
-    })
 
-    
     let noteWebsite: any;
     WA.room.area.onEnter('getinfo').subscribe(async () => {
         const userInfo = WA.player.state.informations;
@@ -55,10 +46,6 @@ WA.onInit().then(async () => {
     onEntryRegister()
     onEntryNavigationStairs()
     onEntryEntryJistsiRooms()
-
-    WA.state.onVariableChange("room-state").subscribe((e) => {
-        console.log("room-state", e)
-    })
 
 }).catch(e => console.error(e));
 
