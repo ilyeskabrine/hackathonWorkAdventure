@@ -17,6 +17,5 @@ uassooemane@myges.fr
 3. Ajout d'un state pour tracker si un médécin et un patient sont dans une salle, et le rediriger vers la salle du médécin ou la salle d'attente
 4. Ajout d'une mini guideline pour que l'utilisateur se dirige vers le formulaire
 5. Ajout d'un bouton pour changer d'instance d'hopital
-
    
    
