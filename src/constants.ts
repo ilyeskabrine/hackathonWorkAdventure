@@ -4,4 +4,7 @@ export const DOOR_POINT_NAME = "zone"
 export const DOOR_ENTRY_ACTION = "entry_zone"
 export const DOOR_EXIT_ACTION = "exit_zone"
 export const NUMBER_OF_ROOM = 6
+export const NUMBER_OF_CONSULTATION_ROOM = 5
 export const NUMBER_USER_PROPERTY_NAME = 'numberOfUsers'
+export const JITSI_NAME = "jitsiSalle"
+export const ROOMS_COORDINATES = ["450, 240", "440, 300", "870, 300", "700, 300", "720, 240"]

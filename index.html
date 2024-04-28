@@ -6,9 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
-    <meta name="title" content="WorkAdventure Starter Kit">
-    <title>WorkAdventure test map</title>
+    <meta name="title" content="Virtual Health">
+    <title>Virtual Health</title>
     <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/src/styles/reset.css">
+    <link rel="stylesheet" href="/src/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <script>
         window.onload = function () {
             const host = window.location.host;
@@ -16,449 +22,133 @@
             if (path.endsWith('index.html')) {
                 path = path.substr(path, path.length - 'index.html'.length);
             }
-            const instanceId = Math.random().toString(36).substring(2, 15);
+            const instanceId = "hopital-1";
             const url = `https://play.workadventu.re/_/${instanceId}/${host}${path}map.tmj`;
-            document.getElementById('testMapBtnURL').href = url;
-            document.getElementById('testMapURL').href = url;
-
-
-            const tmjURL = window.location.protocol + '//' + window.location.host + path + 'map.tmj';
-            document.getElementById('tmjURL').innerText = tmjURL;
-
-            const gettingStartedLink = 'https://workadventu.re/getting-started?name=Map&mapUrl=' + tmjURL;
-            document.getElementById('gettingStartedLink').href = gettingStartedLink;
+            document.getElementById('Start1').href = url;
+            document.getElementById('Start2').href = url;
+            document.getElementById('Start3').href = url;
+            document.getElementById('Start4').href = url;
 
         };
     </script>
-    <style>
-        body {
-            margin: 0px;
-            padding: 0px;
-        }
-
-        .header-area {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-
-
-        }
-
-        .container-left {
-            width: 1000px;
-            height: 700px;
-            position: relative;
-
-        }
-
-        .container-right {
-            width: 400px;
-            height: 400px;
-            position: relative;
-        }
-        .img-map{
-            position: absolute;
-            width: 200px;
-            right: 350px;
-            top:180px;
-            border-radius: 10px;
-
-        }
-        .content-container-left {
-            position: absolute;
-            left: 50px;
-        }
-
-        .content-container-left h2 {
-            font-weight: 700;
-            line-height: 70px;
-            font-size: 45px;
-            margin-bottom: 20px;
-            color: #2a2a2a;
-            font-family: Arial;
-        }
-
-        .content-container-left p {
-            font-family: Arial;
-            width: 600px;
-            color: #2a2a2a;
-            font-weight: 400;
-        }
-
-        nav {
-            background-color: #fff;
-            box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.03);
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 30px;
-        }
-
-        nav img {
-            width: 200px;
-        }
-
-        nav nav-right {
-            display: flex;
-            flex-direction: row;
-        }
-
-        a {
-            text-decoration: none;
-            margin-right: 60px;
-            font-weight: 500;
-            font-size: 17px;
-            color: #5e5d5d;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            border-radius: 20px;
-            color: white;
-            background: linear-gradient(105deg, rgba(91, 104, 235, 1) 0%, rgba(40, 225, 253, 1) 100%);
-        }
-
-        .btn-start {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            background-color: #2b7af3;
-            color: #fff !important;
-            padding: 10px 20px !important;
-            width: 120px;
-            font-family: Arial;
-            text-transform: capitalize;
-            font-size: 15px;
-            border-radius: 23px;
-
-        }
-
-        .ourServices {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            margin: 5px;
-        }
-
-        .services-item {
-            margin: 10px;
-            padding: 30px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            border-radius: 10px 50px 10px 10px;
-            transition: all .3s;
-        }
-
-        .services-item h2 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            font-family: Arial;
-        }
-
-        .services-item p {
-            font-size: 15px;
-            line-height: 30px;
-            font-weight: 300;
-            color: #afafaf;
-            font-family: Arial;
-
-        }
-
-        .services-item img {
-            width: 100px;
-        }
-
-        .services-item span {
-            color: #2b7af3;
-            font-size: 15px;
-            font-family: Arial;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-        }
-
-        .title-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .title-section h1 {
-            text-align: center;
-            font-family: Arial;
-            margin-bottom: 10px;
-        }
-
-        .title-section p {
-            font-size: 15px;
-            color: #afafaf;
-            font-family: Arial;
-        }
-        .about-content{
-            margin: 0px 100px 0px 100px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-        }
-        .container-ourstory{
-            margin: 10px;
-            padding: 20px;
-            width: 600px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            border-radius:20px;
-            transition: all .3s;
-        }
-        .container-ourstory h2{
-            color: #2b7af3;
-            font-family:Arial;
-            font-size: 25px;
-        }
-        .container-img img{
-            border-radius: 20px;
-        }
-        .container-ourstory p{
-            color: #b8b9bd;
-            font-family:Arial;
-        }
-        .flex-col{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .container-ourvalue{
-            margin: 10px;
-            padding: 20px;
-            width: 600px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            border-radius:20px;
-            transition: all .3s;
-        }
-        .container-ourvalue h2{
-            color: #2b7af3;
-            font-family:Arial;
-            font-size: 25px;
-        }
-       .container-footer{
-           margin-top:30px ;
-           display: flex;
-           flex-direction: row;
-           justify-content: space-around;
-           background-color: #2b7af3;
-           padding: 20px;
-           align-items: center;
-           font-family: Arial;
-       }
-       .linkes a{
-           color: white;
-       }
-
-    </style>
 </head>
-<header>
-    <nav>
-        <div class="nav-left">
-            <img src="/images/logo.png">
-        </div>
-        <div class="nav-right">
-            <a href="#about">About</a>
-            <a href="#ourServices">Our services</a>
-            <a id="testMapBtnURL" href="" class="btn">Get started</a>
-        </div>
-    </nav>
-</header>
+
 <body>
-<section class="header-area">
-    <img class="container-left" src="/images/slider-left-dec.png">
-    <div class="content-container-left">
-        <h2>Welcome to MediVirt
+    <header>
+        <nav>
+            <a href="/">
+                <img src="/images/logo.png" />
+            </a>
 
-            Consult</h2>
-        <p>At MediVirt Consult, we believe in bringing healthcare closer to you, wherever you are. Our platform was born
-            out of the vision to revolutionize healthcare delivery through technology, making quality healthcare
-            accessible and convenient for everyone.</p>
-        <a id="testMapURL" class="btn-start">
-            Get started
-            <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <g stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
-                    <path d="m19 11.9998h-15"/>
-                    <path d="m15 6.99988 4.2929 4.29292c.3333.3333.5.5.5.7071s-.1667.3738-.5.7071l-4.2929 4.2929"/>
-                </g>
-            </svg>
-        </a>
-    </div>
-    <img class="container-right" src="/images/doctor.png">
-    <img src="/images/map.png" class="img-map">
-</section>
-<main>
-    <section id="about">
-        <div class="title-section">
-            <h1>
-                About <span style="color: #5795f5; ">us</span>
-            </h1>
-            <img src="/images/heading-line-dec.png">
-            <p>Learn more about MediVirt Consult and our mission to revolutionize healthcare delivery</p>
-        </div>
+            <ul>
+                <li><a href="#about">A propos</a></li>
+                <li><a href="#services">Nos services</a></li>
+                <li><a class="btn-primary" href="#" id="Start4">Get started <img src="/images/arrow.svg" /></a></li>
+                <li><img src="/images/french.svg" /></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="about-content">
-            <div class="container-img">
-                <img src="/images/healthcare%205.png">
+    <main>
+        <section class="landing">
+            <div>
+                <h1>Bonjour !</h1>
+                <h2>Découvrez notre plateforme de <br /> consultation en visioconférence.</h2>
+                <a class="btn-primary w-300" id="Start1" href="#">Get started <img src="/images/arrow.svg" /></a>
             </div>
-            <div class="flex-col">
-                <div class="container-ourstory">
-                   <h2>
-                       Our Story
-                   </h2>
-                    <p>
-                        MediVirt Consult was founded by a team of passionate individuals who recognized the need for innovative solutions in healthcare delivery. Our journey began with a shared commitment to harnessing the power of technology to improve patient outcomes and enhance the healthcare experience
-                    </p>
+
+            <div>
+                <span>
+                    Sortez des sentiers battus, et découvrez votre salle de soins comme jamais au par avant. Grâce à
+                    notre carte interactive, connectez-vous avec des professionnels qualifiés, où que vous soyez.
+                    <br />
+                    Des conseils médicaux au coaching professionnel, trouvez l'expert adapté à vos besoins en un clic.
+                </span>
+
+                <span class="bold">Bienvenue dans l'ère de la consultation en ligne sans frontières !</span>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div>
+                <h3>Qui sommes nous ?</h3>
+                <div class="flex-col gap-2 max-350">
+                    <span>Notre plateforme est née de la conviction que l'accès aux services professionnels devrait
+                        simple. Nous avons réuni la technologie, l’innovation et l’utilisateur au coeur du besoin, pour
+                        créer une expérience de consultation en visioconférence sans précédent.</span>
+                    <span>Nous croyons fermement en l'idée que la distance ne devrait pas être un obstacle à la qualité
+                        des interactions professionnelles. C'est pourquoi nous avons développé une carte interactive
+                        novatrice qui vous permet de trouver et de vous connecter avec les professionnelsa n’importe
+                        quel moment et peu importe où vous vous trouvez dans le monde.</span>
                 </div>
-
-                    <div class="container-ourvalue">
-                        <h2>
-                            Our Values
-                        </h2>
-                        <div class="flex-row">
-                            <div>
-                                <span style="display: flex; flex-direction: row; align-items: center; color: #afafaf;font-family: Arial; font-size: 15px;"><svg
-                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="30" height="30"><path
-                                        d="m0 0h24v24h-24z" fill="#fff" opacity="0"/><path
-                                        d="m12 2a10 10 0 1 0 10 10 10 10 0 0 0 -10-10zm4.3 7.61-4.57 6a1 1 0 0 1 -.79.39 1 1 0 0 1 -.79-.38l-2.44-3.11a1 1 0 0 1 1.58-1.23l1.63 2.08 3.78-5a1 1 0 1 1 1.6 1.22z"
-                                        fill="#2b7af3"/></svg>Quality Care</span>
-                                <span style="display: flex; flex-direction: row; align-items: center; color: #afafaf;font-family: Arial; font-size: 15px;"> <svg
-                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="30" height="30"><path
-                                        d="m0 0h24v24h-24z" fill="#fff" opacity="0"/><path
-                                        d="m12 2a10 10 0 1 0 10 10 10 10 0 0 0 -10-10zm4.3 7.61-4.57 6a1 1 0 0 1 -.79.39 1 1 0 0 1 -.79-.38l-2.44-3.11a1 1 0 0 1 1.58-1.23l1.63 2.08 3.78-5a1 1 0 1 1 1.6 1.22z"
-                                        fill="#2b7af3"/></svg>Accessibility</span>
-                            </div>
-                            <div>
-                                <span style="display: flex; flex-direction: row; align-items: center; color: #afafaf;font-family: Arial; font-size: 15px;"><svg
-                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="30" height="30"><path
-                                        d="m0 0h24v24h-24z" fill="#fff" opacity="0"/><path
-                                        d="m12 2a10 10 0 1 0 10 10 10 10 0 0 0 -10-10zm4.3 7.61-4.57 6a1 1 0 0 1 -.79.39 1 1 0 0 1 -.79-.38l-2.44-3.11a1 1 0 0 1 1.58-1.23l1.63 2.08 3.78-5a1 1 0 1 1 1.6 1.22z"
-                                        fill="#2b7af3"/></svg>Privacy and Security</span>
-                                <span style="display: flex; flex-direction: row; align-items: center; color: #afafaf;font-family: Arial; font-size: 15px;"><svg
-                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="30" height="30"><path
-                                        d="m0 0h24v24h-24z" fill="#fff" opacity="0"/><path
-                                        d="m12 2a10 10 0 1 0 10 10 10 10 0 0 0 -10-10zm4.3 7.61-4.57 6a1 1 0 0 1 -.79.39 1 1 0 0 1 -.79-.38l-2.44-3.11a1 1 0 0 1 1.58-1.23l1.63 2.08 3.78-5a1 1 0 1 1 1.6 1.22z"
-                                        fill="#2b7af3"/></svg>Innovation</span>
-                            </div>
-                        </div>
-
             </div>
-        </div>
-    </section>
-    <div class="title-section">
-        <h1>
-            Amazing <span style="color: #5795f5; ">services</span>
-        </h1>
-        <img src="/images/heading-line-dec.png">
-        <p>Discover the range of services we offer at MediVirt Consult</p>
-    </div>
 
-    <section id="ourServices" class="ourServices">
+            <div>
+                <h3>Nos valeurs</h3>
+                <ul>
+                    <li><img src="/images/security.svg" /> Confidentialité et sécurité</li>
+                    <li><img src="/images/innovation.svg" /> Innovation</li>
+                    <li><img src="/images/service.svg" /> Qualité du service</li>
+                </ul>
+            </div>
+        </section>
 
-        <div class="services-item">
-            <img src="/images/healthcare.png">
-            <h2>Virtual Medical Consultations</h2>
-            <p>Describe how patients can meet with doctors and other healthcare professionals through online
-                consultations, where they can discuss their health issues, receive diagnoses, and treatment
-                recommendations.</p>
+        <section id="services" class="services">
+            <h3>Nos services</h3>
 
-            <span> Read more
-                 <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <g stroke="#2b7af3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
-                    <path d="m19 11.9998h-15"/>
-                    <path d="m15 6.99988 4.2929 4.29292c.3333.3333.5.5.5.7071s-.1667.3738-.5.7071l-4.2929 4.2929"/>
-                </g>
-            </svg></span></div>
-        <div class="services-item">
-            <img src="/images/healthcare2.png">
-            <h2>Remote Medical Monitoring</h2>
-            <p>Explain how patients can benefit from regular monitoring of their health status remotely, including
-                monitoring of chronic diseases, medication management, and symptom tracking.</p>
-            <span> Read more
-                 <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <g stroke="#2b7af3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
-                    <path d="m19 11.9998h-15"/>
-                    <path d="m15 6.99988 4.2929 4.29292c.3333.3333.5.5.5.7071s-.1667.3738-.5.7071l-4.2929 4.2929"/>
-                </g>
-            </svg></span>
-        </div>
-        <div class="services-item">
-            <img src="/images/healthcare3.png">
-            <h2>Second Medical Opinion</h2>
-            <p>Highlight the option for patients to obtain a second medical opinion from experts in various medical
-                fields to confirm a diagnosis or explore other treatment options</p>
-            <span> Read more
-                 <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <g stroke="#2b7af3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
-                    <path d="m19 11.9998h-15"/>
-                    <path d="m15 6.99988 4.2929 4.29292c.3333.3333.5.5.5.7071s-.1667.3738-.5.7071l-4.2929 4.2929"/>
-                </g>
-            </svg></span>
-        </div>
-        <div class="services-item">
-            <img src="/images/healthcare4.png">
-            <h2>Health and Wellness Advice</h2>
-            <p>Inform patients about the availability of advice and resources to improve their overall health and
-                well-being, including information on nutrition, exercise, stress management, etc.</p>
+            <ul>
+                <li>
+                    <div>
+                        <h4>Consultation virtuelle</h4>
+                        <span>Aujourd'hui l'accès aux professionnels de santé qualifiés peut paraitre un vrai
+                            calvaire.</span>
+                        <span>Nous vous proposons d'en finir avec ça !</span>
+                    </div>
+                    <a class="btn-primary w-300" href="#" id="Start2">Get started <img src="/images/arrow.svg" /></a>
+                </li>
 
-            <span> Read more
-                 <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <g stroke="#2b7af3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
-                    <path d="m19 11.9998h-15"/>
-                    <path d="m15 6.99988 4.2929 4.29292c.3333.3333.5.5.5.7071s-.1667.3738-.5.7071l-4.2929 4.2929"/>
-                </g>
-            </svg></span></div>
+                <li>
+                    <div>
+                        <h4>La taxe lapin</h4>
+                        <span>En moyenne, un médecin perd deux heures par semaine à cause des patients qui ne viennent
+                            pas aux rendez-vous.</span>
+                        <span>Nous avons décidé d'être les premiers à mettre en place la taxe "lapin" dans les
+                            consultations à distance, afin que nos médecins ne perdent plus de temps.</span>
+                    </div>
+                </li>
 
-    </section>
-    <section>
+                <li>
+                    <div>
+                        <h4>Besoin d'un <br /> deuxième avis</h4>
+                        <span>Nos médecins seront ravis de vous aider et tout mettre en place pour vous rassurer.</span>
+                    </div>
+                </li>
 
+                <li>
+                    <div>
+                        <h4>L'innovation au coeur de nos services</h4>
+                        <span>Notre concept reste en constante évolution, nous sommes toujours ravis de récupérer vos
+                            besoins et vos questions.</span>
+                    </div>
+                    <a class="btn-primary w-300" href="#">Besoin d'aide ? <img src="/images/arrow.svg" /></a>
+                </li>
+            </ul>
+        </section>
+    </main>
 
-    </section>
-</main>
+    <footer>
+        <img src="/images/Logo_White.png" />
 
-<footer>
-    <div class="container-footer">
-        <div class="socials">
-            <a href="https://discord.gg/G6Xh9ZM9aR" target="_blank" title="discord">
-                <img src="/images/discord.png" alt="discord">
-            </a>
-            <a href="https://github.com/thecodingmachine/workadventure" target="_blank" title="github">
-                <img src="/images/github.png" alt="github">
-            </a>
-            <a href="https://www.youtube.com/channel/UCXJ9igV-kb9gw1ftR33y5tA" target="_blank" title="youtube">
-                <img src="/images/youtube.png" alt="youtube">
-            </a>
-            <a href="https://twitter.com/Workadventure_" target="_blank" title="twitter">
-                <img src="/images/twitter.png" alt="twitter">
-            </a>
-            <a href="https://www.instagram.com/workadventure_" target="_blank" title="instagram">
-                <img src="/images/instagram.png" alt="instagram">
-            </a>
-            <a href="https://www.linkedin.com/company/workadventu-re" target="_blank" title="linkedin">
-                <img src="/images/linkedin.png" alt="linkedin">
-            </a>
-        </div>
-
-        <div class="linkes">
-            <a href="https://www.youtube.com/watch?v=lu1IZgBJJD4&list=PL7jmrMKZfjCnz36FvezxJ-Tshuh3Zz-nc&ab_channel=WorkAdventure"
-               target="_blank">Watch tutorials</a>
-            <a href="https://discord.gg/G6Xh9ZM9aR" target="_blank">Talk to the community</a>
-            <a href="https://workadventu.re/" target="_blank" title="workadventu.re">&copy; WorkAdventure</a>
-        </div>
-
-    </div>
-
-
-</footer>
+        <nav>
+            <ul>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#about">A propos</a></li>
+                <li><a href="#services">Nos services</a></li>
+                <li><a class="btn-primary-white" href="#" id="Start3">Get started <img
+                            src="/images/arrow_white.svg" /></a></li>
+            </ul>
+        </nav>
+    </footer>
 </body>
 
 </html>
