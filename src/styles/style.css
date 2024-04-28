@@ -252,11 +252,47 @@ footer {
 }
 
 @media screen and (max-width: 930px) {
-    nav {
-        padding: 2rem 1.75rem;
+    header {
+        nav {
+            padding: 2rem 1.75rem;
+    
+            & ul {
+                display: none;
+            }
+        }
+    }
 
-        & ul {
-            display: none;
+    section {
+        flex-direction: column;
+        &.landing {
+            align-items: baseline;
+            div {
+                &:first-child {
+                    h1 {
+                        font-size: 60px;
+                    }
+                }
+            }
+        }
+
+        &.services {
+            ul {
+                flex-direction: column;
+                li {
+                    gap: 2rem;
+                }
+            }
+        }
+
+    }
+
+    footer {
+        flex-direction: column;
+        nav {
+            padding: 2rem 1.75rem;
+            & ul {
+                flex-direction: column;
+            }
         }
     }
 }
