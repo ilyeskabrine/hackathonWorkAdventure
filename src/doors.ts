@@ -70,7 +70,10 @@ export const checkIfUSerIsDoctor = () => {
         if (doctor.id === userId) {
             return doctor
         }
+        return
     })
+
+    console.log(filterDoctorsWithPlayerId, 'doctors')
 
     return filterDoctorsWithPlayerId.length
 }
