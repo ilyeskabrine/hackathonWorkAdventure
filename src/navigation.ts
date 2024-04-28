@@ -118,7 +118,17 @@ export const onEntryNavigationStairs = () => {
         WA.state.saveVariable("waiting-room", {
             actualRoom: room
         }).catch(e => console.error('Something went wrong while saving variable waiting-room', e));
-        WA.nav.goToRoom(`https://play.workadventu.re/_/${room}/localhost:5173/map.tmj`)
+        const url = new URL(WA.room.id);
+        const pathname = url.pathname;
+        const indexHopital = pathname.indexOf('hopital-');
+        if (indexHopital !== -1) { 
+            const indexNextSlash = pathname.indexOf('/', indexHopital); 
+            if (indexNextSlash !== -1) {
+                const newPathname = pathname.substring(0, indexHopital) + room + pathname.substring(indexNextSlash);
+                const newUrl = new URL(url.origin + newPathname + url.search);
+                WA.nav.goToRoom(newUrl.href);
+            }
+        }
     })
 }
 
