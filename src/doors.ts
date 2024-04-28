@@ -6,11 +6,6 @@ type DoorProps = {
     nbrOfUsers: number
 }
 
-type DoctorProps = {
-    id: number
-    name: string
-    room: string
-}
 
 export const initAllDoors = () => {
     for(let i = 1; i <= NUMBER_OF_ROOM; i++) {
