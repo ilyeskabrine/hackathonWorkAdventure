@@ -1,4 +1,5 @@
 import { NUMBER_OF_ROOM, DOOR_OPEN_NAME, DOOR_CLOSE_NAME, DOOR_ENTRY_ACTION, DOOR_POINT_NAME, DOOR_EXIT_ACTION, JITSI_NAME } from "./constants";
+import { RoomState } from "./navigation";
 
 type DoorProps = {
     doorState: boolean
@@ -67,10 +68,10 @@ export const listenDoorsVariables = () => {
 }
 
 export const checkIfUSerIsDoctor = () => {
-    const roomDoctors = WA.state['room-state']
+    const roomDoctors = WA.state['room-state'] as RoomState
     const userId = WA.player.playerId
     
-    const filterDoctorsWithPlayerId = roomDoctors.doctors.filter((doctor: DoctorProps) => {
+    const filterDoctorsWithPlayerId = roomDoctors.doctors.filter((doctor) => {
         if (doctor.id === userId) {
             return doctor
         }
@@ -80,11 +81,13 @@ export const checkIfUSerIsDoctor = () => {
 }
 
 export const checkIfRoomAlreadyContainDoctor = (roomIndex: number) => {
-    const room = WA.state['room-state'][`${JITSI_NAME}${roomIndex}`]
+    const rooms = WA.state['room-state'] as RoomState
+    const room = rooms[`${JITSI_NAME}${roomIndex}`]
     return room.doctor !== null
 }
 
 export const checkIfRoomAlreadyContainPatient = (roomIndex: number) => {
-    const room = WA.state['room-state'][`${JITSI_NAME}${roomIndex}`]
+    const rooms = WA.state['room-state'] as RoomState
+    const room = rooms[`${JITSI_NAME}${roomIndex}`]
     return room.patient !== null
 }
