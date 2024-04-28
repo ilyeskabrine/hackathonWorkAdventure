@@ -86,6 +86,5 @@ export const checkIfRoomAlreadyContainDoctor = (roomIndex: number) => {
 
 export const checkIfRoomAlreadyContainPatient = (roomIndex: number) => {
     const room = WA.state['room-state'][`${JITSI_NAME}${roomIndex}`]
-    console.log(room, 'room')
     return room.patient !== null
 }
