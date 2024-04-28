@@ -27,4 +27,7 @@ Lancer les commandes dans l'ordre
 5. Ajout d'un bouton pour changer d'instance d'hopital
 
    
-   
+### Fonctionnalités ZUO Fabian
+1. Intégrer la gestion des portes + gestion des states dans tiled
+2. Gérer le nombre max de personne par salle
+3. Faire en sorte qu'une salle puisse accueillir qu'un doctor et qu'un patient
